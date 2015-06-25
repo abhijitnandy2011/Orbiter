@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5B2C5D1A-7B8E-4343-BC33-836ABD122D3A}</ProjectGuid>
+    <RootNamespace>D3D11Client</RootNamespace>
+    <ProjectName>TestBasicShaders</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\Modules\Plugin</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\Modules\Plugin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\Modules\Plugin/D3D7Client.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/D "D3D_DEBUG_INFO" %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Orbitersdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;DEBUG;_DEBUG;_WINDOWS;_USRDLL;D3D11CLIENT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxguid.lib;orbiter.lib;orbitersdk.lib;psapi.lib;dxgi.lib;Dxva2.lib;d3d11.lib;d3dx11.lib;d3dcompiler.lib;d3d9.lib;d3dx9.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>E:\Code\Orbiter\1 Testing Grounds\OrbiterD3D11\Orbitersdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(Configuration)\$(TargetName).pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <Profile>true</Profile>
+      <AdditionalOptions>/ignore:4254 /ignore:4078 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\..\..\Modules\Plugin/D3D11Client.bsc</OutputFile>
+    </Bscmake>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/D3D7Client.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\..\Orbitersdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxguid.lib;orbiter.lib;orbitersdk.lib;psapi.lib;dxgi.lib;Dxva2.lib;d3d11.lib;d3dx11.lib;d3dcompiler.lib;d3dx9.lib;dxerr.lib;lib\libnoise.lib;lib\libpng15.lib;lib\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Orbitersdk\lib;.\..\..\Modules\Server;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib;LIBCMTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ShowProgress>NotSet</ShowProgress>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <Profile>true</Profile>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/D3D11Client.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D3D11Client.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="D3D11Extra.h" />
+    <CustomBuildStep Include="D3D11Surface.h" />
+    <CustomBuildStep Include="GDIPad.h" />
+    <CustomBuildStep Include="SurfMgr.h" />
+    <CustomBuildStep Include="TileMgr.h" />
+    <CustomBuildStep Include="VPlanet.h" />
+    <CustomBuildStep Include="VVessel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CelSphere.cpp" />
+    <ClCompile Include="ConfigFileParser.cpp" />
+    <ClCompile Include="D3D11Client.cpp" />
+    <ClCompile Include="D3D11Config.cpp" />
+    <ClCompile Include="D3D11Utils.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ShaderDiskCache.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="VideoTab.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CelSphere.h" />
+    <ClInclude Include="ConfigFileParser.h" />
+    <ClInclude Include="D3D11Client.h" />
+    <ClInclude Include="D3D11Config.h" />
+    <ClInclude Include="D3D11Utils.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Resources.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShaderDiskCache.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="Stats.h" />
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="VideoTab.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Modules\D3D11Shaders\BaseLights.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Blit.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\CelBackground.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\CelSphere.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\D3D11Pad.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\D3D11Text.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\DisplayHDRTexture.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_CalculateBloomTexture.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_CalculateLuminance.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_CopyTextureWithExposure.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_Downsample.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_GaussianBlur.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_Includes.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_Reduce.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\HDR_Upsample.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\Mesh.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Mesh_BaseTile.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Mesh_Shadow.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Overlay.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\ParticleStream.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet1_FL10.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\Common.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\GS_Details_AverageHigh.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\GS_Details_City.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\HSDS_Planet1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_Common.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_copyInscatter1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_copyInscatterN.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_copyIrradiance1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_Inscatter1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_InscatterN.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_InscatterS.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_Irradiance1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_IrradianceN.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_Transmittance.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PAS_VS.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PS_AdvancedAtmosphere.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PS_BasicAtmosphere.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PS_Details_AverageHigh.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PS_Details_City.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\PS_Planet1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\Terrain_Shadows.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\VS.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\VS_Details_AverageHigh.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\VS_Details_City.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet\VS_Planet1.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet_Clouds.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet_CloudsShadow.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet_Haze.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Planet_Ring.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_Includes.hlsl" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_CalculateBloomTexture.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_CalculateLightStreaksTexture.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_CalculateLuminance.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_CopyTextureWithExposure.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_CreateLightStreaks.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_GaussianBlur.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\HDR_PS_Reduce.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\PSPipeline\PassThroughVS.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\SimpleBillBoard.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\VC.fx" />
+    <None Include="..\..\Modules\D3D11Shaders\Vessel.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Modules\D3D11Shaders\Shadows.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Modules\D3D11Shaders\ShadowsCommon.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Modules\D3D11Shaders\GS_Planet1_Shadow.fx">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="..\..\Modules\D3D11Shaders\VS_Planet1_shadow.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="D3D11Client.targets" />
+  </ImportGroup>
+</Project>
