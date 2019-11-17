@@ -12,7 +12,7 @@
 #include <d3dx11.h>
 
 // Orbiter
-#include "..\include\GraphicsAPI.h"
+#include "..\..\include\GraphicsAPI.h"
 
 // Local
 #include "D3D11Config.h"
@@ -57,12 +57,12 @@ public:
     bool clbkFullscreenMode() const;    //    -> D3D11Client
     bool clbkInitialise();                //    -> D3D11Client
     HWND clbkCreateRenderWindow();        //    -> D3D11Client
-    void clbkPostCreation();            //    -> D3D11Client
+ //   void clbkPostCreation();            //    -> D3D11Client
     bool clbkGetRenderParam( DWORD prm, DWORD *value ) const;// = 0
 
 
     // Popups.
-    void clbkPreOpenPopup();        //?
+ /*   void clbkPreOpenPopup();        //?
     bool RenderWithPopupWindows();    //?
 
     // GDI.
@@ -119,7 +119,7 @@ public:
     oapi::ParticleStream *clbkCreateExhaustStream( PARTICLESTREAMSPEC *pss, OBJHANDLE obj, const double *lvl, const VECTOR3 &ref, const VECTOR3 &dir );
     oapi::ParticleStream *clbkCreateReentryStream( PARTICLESTREAMSPEC *pss,    OBJHANDLE obj );
     bool clbkParticleStreamExists( const oapi::ParticleStream *ps );
-
+    */
 
     //--------------------------- End Orbiter Public Callbacks ---------------------------------
 
@@ -176,18 +176,18 @@ protected:
     //---------------- Begin Orbiter Protected callbacks -------------------------
 
     // Surfaces
-    virtual int clbkBeginBltGroup (SURFHANDLE tgt) { return 0; }
+/*    virtual int clbkBeginBltGroup (SURFHANDLE tgt) { return 0; }
     virtual int clbkEndBltGroup () { return 0; }
     bool clbkCopyBitmap( SURFHANDLE srf, HBITMAP hbm, int x, int y, int dx, int dy );//    -> TextureManager
     SURFHANDLE clbkCreateSurface( HBITMAP hbmp );                            //    -> TextureManager
     SURFHANDLE clbkLoadTexture( const char *fname, DWORD flags );
-    virtual SURFHANDLE clbkLoadSurface (const char *fname, DWORD attrib);
+    virtual SURFHANDLE clbkLoadSurface (const char *fname, DWORD attrib);*/
 
     // Render.
     void clbkUpdate( bool running );
     void clbkRenderScene();// = 0
-    bool clbkDisplayFrame();
-    void clbkRender2DPanel( SURFHANDLE *srf, MESHHANDLE hMesh, MATRIX3 *T, bool transparent );
+/*    bool clbkDisplayFrame();
+    void clbkRender2DPanel( SURFHANDLE *srf, MESHHANDLE hMesh, MATRIX3 *T, bool transparent );*/
 
     // Exit.
     void clbkCloseSession( bool fastclose );

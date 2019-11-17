@@ -17,9 +17,9 @@
 #define _CRT_SECURE_NO_DEPRECATE
 
 // Orbiter
-#include "..\include\OrbiterAPI.h"
-#include "..\include\GraphicsAPI.h"
-#include "..\include\Orbitersdk.h"
+#include "..\..\include\OrbiterAPI.h"
+#include "..\..\include\GraphicsAPI.h"
+#include "..\..\include\Orbitersdk.h"
 
 // Windows
 #include <physicalmonitorenumerationapi.h>

@@ -12,7 +12,7 @@
 #include <DxErr.h>       // for DXTraceA
 
 // Orbiter
-#include "..\include\OrbiterAPI.h"  // For COLOUR4 - british
+#include "..\..\include\OrbiterAPI.h"  // For COLOUR4 - british
 
 
 namespace ClientUtils {

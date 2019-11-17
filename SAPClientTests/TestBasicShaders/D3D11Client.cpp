@@ -79,7 +79,7 @@ D3D11Client::clbkCreateRenderWindow()
     auto currExStyle = GetWindowLong(m_hWindow, GWL_EXSTYLE);
     auto style = WS_POPUP;
     auto exStyle = WS_EX_TOPMOST;*/
-    SetWindowTextA( m_hWindow, "- "APP_TITLE );
+    //SetWindowTextA( m_hWindow, "- "APP_TITLE );
 
     // Get Windows display settings
     EnumDisplaySettings(nullptr, ENUM_CURRENT_SETTINGS, &m_CurrentMode);

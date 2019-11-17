@@ -20,7 +20,7 @@
 #include <DXGI.h>
 
 // Orbiter
-#include "..\include\GraphicsAPI.h"
+#include "..\..\include\GraphicsAPI.h"
 
 // Local
 #include "D3D11Config.h"

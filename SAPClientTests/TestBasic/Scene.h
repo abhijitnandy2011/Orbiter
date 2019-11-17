@@ -13,7 +13,7 @@
 #include <d3dx9math.h>   // D3DXMATRIX etc
 
 // Orbiter
-#include "..\include\OrbiterAPI.h"  // For VECTOR3, OBJHANDLE etc
+#include "..\..\include\OrbiterAPI.h"  // For VECTOR3, OBJHANDLE etc
 
 // Local - always include this after Dx includes
 #include "DxTypes.h"

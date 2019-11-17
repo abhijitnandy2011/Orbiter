@@ -6,7 +6,7 @@
 #include "Stats.h"
 
 // Orbiter
-#include "..\include\OrbiterAPI.h"
+#include "..\..\include\OrbiterAPI.h"
 
 PerformanceCounter::PerformanceCounter()
 {
